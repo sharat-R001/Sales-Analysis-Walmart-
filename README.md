@@ -1,98 +1,76 @@
-Walmart Sales Analysis — SQL + Python Project
-Overview
-This project performs end-to-end analysis on Walmart sales data to identify sales trends, branch performance, customer behavior, and profitability. It combines Python and SQL to create a structured, reproducible, and scalable analytics workflow for retail data.
+# Walmart Sales Analysis — SQL + Python Project
 
-Project Goals
-Analyze sales trends by branch, product category, and time.
+## Overview
 
-Identify high- and low-performing branches.
+This project performs end-to-end analysis on Walmart sales data to identify sales trends, branch performance, customer behavior, and profitability. It combines Python and SQL to create a structured, reproducible analytics workflow for retail data.
 
-Understand customer behavior patterns and peak transaction times.
+## Project Goals
 
-Examine payment method preferences.
+- Analyze sales trends by branch, product category, and time.
+- Identify high- and low-performing branches.
+- Understand customer behavior patterns and peak transaction times.
+- Examine payment method preferences.
+- Assess product line profitability.
 
-Assess product line profitability.
+## Tech Stack
 
-Tech Stack
-Python (via Anaconda and Jupyter Notebook)
+- **Python** (via Anaconda and Jupyter Notebook)
+- **MySQL** (local or hosted server)
 
-MySQL (local or hosted server)
+### Python Libraries
 
-Libraries:
+- pandas  
+- sqlalchemy  
+- mysql-connector-python  
 
-pandas
+## Data Preparation
 
-sqlalchemy
+- Load raw Walmart sales CSV into Pandas.
+- Perform basic EDA:
+  - Check for missing values
+  - Inspect data types
+  - Remove duplicates
+- Clean and format data:
+  - Fix column types
+  - Handle null values
+  - Convert currency strings to numeric values
+  - Standardize column names for SQL compatibility
 
-mysql-connector-python
+## Feature Engineering
 
-Data Preparation
-Load raw Walmart sales CSV into Pandas.
+- Add new derived column:
+  - `Total_Amount = Unit Price × Quantity`
+- Ensure consistent column names and data types for database ingestion.
 
-Perform basic EDA:
+## MySQL Integration
 
-Check for missing values, nulls, incorrect types, duplicates.
+- Connect using `sqlalchemy` and `mysql-connector-python`
+- Create schema and tables via Python
+- Upload cleaned dataset from Pandas DataFrame to MySQL
 
-Clean and format data:
+## SQL Analysis
 
-Fix column types
+Use SQL queries to answer core business questions:
 
-Handle nulls
+- Sales trends by date, branch, and category
+- Revenue distribution across product lines
+- Popularity of payment methods
+- Peak transaction periods by hour and day
+- Customer ratings and feedback analysis
+- Profitability metrics by branch and category
 
-Convert currency strings to numeric
+## Key Findings
 
-Standardize column names
+- **Top Categories**: Fashion and Food & Beverages consistently drive high sales.
+- **Branch Comparison**: Branch C outperforms others in revenue.
+- **Payment Preference**: E-wallet usage is rapidly increasing.
+- **Customer Behavior**: Transactions and ratings peak during weekends, especially between 12:00 PM and 3:00 PM.
 
-Feature Engineering
-Create new column:
-Total_Amount = Unit Price × Quantity
+## Dataset
 
-Ensure column names and data types are SQL-compliant.
+- Walmart Sales Data  
+- Source: [Kaggle - Walmart Sales Data](https://www.kaggle.com/datasets)
 
-MySQL Integration
-Establish connection using sqlalchemy and mysql-connector-python.
+## License
 
-Create database and tables.
-
-Upload cleaned dataset from Pandas to MySQL.
-
-SQL Analysis
-Use SQL queries to answer business questions:
-
-Sales trends over time and across branches
-
-Revenue by product category and branch
-
-Payment method distribution
-
-Ratings and customer feedback patterns
-
-Peak sales hours and days
-
-Profit margins by product line
-
-Key Findings
-Fashion and Food & Beverages are top-selling categories.
-
-Branch C consistently reports the highest revenue.
-
-E-wallets show increasing popularity among customers.
-
-Transactions and customer ratings peak on weekends, especially between 12:00–15:00.
-
-Requirements
-Anaconda + Jupyter Notebook
-
-MySQL Server
-
-Python libraries:
-
-pandas
-
-sqlalchemy
-
-mysql-connector-python
-
-Dataset
-Walmart Sales Data
-Source: Kaggle (public dataset)
+This project is for educational and analytical purposes only. It is not affiliated with or endorsed by Walmart Inc.
